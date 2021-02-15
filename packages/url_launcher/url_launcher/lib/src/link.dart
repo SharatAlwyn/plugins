@@ -8,6 +8,8 @@ import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher_platform_interface/link.dart';
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
+import 'package:bizmaker/Utils/lasticons_icons.dart';
+
 
 /// A widget that renders a real link on the web, and uses WebViews in native
 /// platforms to open links.
@@ -123,9 +125,24 @@ class DefaultLinkDelegate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return link.builder(
-      context,
-      link.isDisabled ? null : () => _followLink(context),
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            IconButton(
+              icon: Icon(Lasticons.bizicon),
+            ),
+            Text("Details",
+                style: const TextStyle(
+                    color: Colors.black, fontSize: 20.0)),
+          ],
+        ),
+        backgroundColor: Colors.white,
+      ),
+      body: link.builder(
+        context,
+        link.isDisabled ? null : () => _followLink(context),
+      ),
     );
   }
 }

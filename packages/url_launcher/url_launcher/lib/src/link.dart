@@ -132,9 +132,6 @@ class DefaultLinkDelegate extends StatelessWidget {
             IconButton(
               icon: Icon(Lasticons.bizicon),
             ),
-            Text("Details",
-                style: const TextStyle(
-                    color: Colors.black, fontSize: 20.0)),
           ],
         ),
         backgroundColor: Colors.white,
